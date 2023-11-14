@@ -21,15 +21,15 @@ INSTALLED_APPS = [
 By default, it includes the Font Awesome css library
 
 If you do not want to include it because you already include it from another template, just
-set this in your settings f``ile:
+set this in your settings file:
 
 ```
 DJANGO_PASSWORD_EYE_INCLUDE_FONT_AWESOME = False
 ```
-
+``
 ## Requires
 
-JQuery, Bootstrap and Font Awesome. They are included in the widget.
+Font Awesome. It is included in the widget by default.``
 
 ## Usage
 
