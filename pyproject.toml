@@ -1,0 +1,24 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-password-eye"
+version = "1.0.2"
+description = "Password field for Django with the eye icon to show/hide password text"
+readme = "README.md"
+authors = [{ name = "Hugo Meza", email = "hugo.meza.macias@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["password", "eye", "django", "field"]
+dependencies = [
+]
+
+[project.urls]
+Homepage = "https://github.com/hmeza/django_password_eye"
