@@ -1,16 +1,14 @@
 {% load i18n %}
 {% load static %}
+{% load password_eye_extras %}
 
 {% block extrahead %}
-
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+{% include_font_awesome "a" as include_font_awesome_library %}
+{% if include_font_awesome_library %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/login.css' %}" />
-<script src="{% static 'django_password_eye/js/login.js' %}"></script>
+{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/django_password_eye.css' %}" />
+<script src="{% static 'django_password_eye/js/django_password_eye.js' %}"></script>
 {% endblock %}
 
 <div class="input-group" id="show_hide_password">

@@ -18,13 +18,22 @@ INSTALLED_APPS = [
 ]
 ```
 
+By default, it includes the Font Awesome css library
+
+If you do not want to include it because you already include it from another template, just
+set this in your settings f``ile:
+
+```
+DJANGO_PASSWORD_EYE_INCLUDE_FONT_AWESOME = False
+```
+
 ## Requires
 
 JQuery, Bootstrap and Font Awesome. They are included in the widget.
 
 ## Usage
 
-````
+```
 Import PasswordEye and use it instead of the traditional Password field.
 
 from django_password_eye.fields import PasswordEye
@@ -32,9 +41,9 @@ from django_password_eye.fields import PasswordEye
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=150,
                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Login')}),
-                               label='')
+               ``                label='')
     password = PasswordEye(label='')
-````
+```
 
 ## CSS classes
 

@@ -6,9 +6,9 @@ class PasswordEyeWidget(PasswordInput):
 
     class Media:
         css = {
-            "all": ("django_password_eye/css/login.css",)
+            "all": ("django_password_eye/css/django_password_eye.css",)
         }
-        js = ("django_password_eye/js/login.js",)
+        js = ("django_password_eye/js/django_password_eye.js",)
 
         def __init__(self, media=None, css=None, js=None):
             if media is not None:
