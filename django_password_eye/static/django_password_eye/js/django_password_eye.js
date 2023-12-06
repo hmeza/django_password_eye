@@ -1,18 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const showHidePasswordI = document.getElementById('show_hide_password').querySelector('i');
-  const showHidePasswordInput = document.getElementById('show_hide_password').querySelector('input');
+if(typeof djangoPasswordEyeElements === "undefined") {
+  let djangoPasswordEyeElements = [];
 
-  document.getElementById('show_hide_password').querySelector('.input-group-addon').addEventListener('click', function(event) {
+  function djangoPasswordEyeClickHandler(event) {
     event.preventDefault();
+    for (let i = 0; i < djangoPasswordEyeElements.length; i++) {
+      const iElement = djangoPasswordEyeElements[i].querySelector('i');
+      const input = djangoPasswordEyeElements[i].querySelector('input');
+      if (input.type === 'text') {
+        input.type = 'password';
+        iElement.classList.add('fa-eye-slash');
+        iElement.classList.remove('fa-eye');
+      } else if (input.type === 'password') {
+        input.type = 'text';
+        iElement.classList.remove('fa-eye-slash');
+        iElement.classList.add('fa-eye');
+      }
+    }
+  }
 
-    if (showHidePasswordInput.type === 'text') {
-      showHidePasswordInput.type = 'password';
-      showHidePasswordI.classList.add('fa-eye-slash');
-      showHidePasswordI.classList.remove('fa-eye');
-    } else if (showHidePasswordInput.type === 'password') {
-      showHidePasswordInput.type = 'text';
-      showHidePasswordI.classList.remove('fa-eye-slash');
-      showHidePasswordI.classList.add('fa-eye');
+  document.addEventListener('DOMContentLoaded', function () {
+    djangoPasswordEyeElements = document.getElementsByClassName('django_password_eye');
+    for (let i = 0; i < djangoPasswordEyeElements.length; i++) {
+      djangoPasswordEyeElements[i]
+          .querySelector('.input-group-addon')
+          .addEventListener('click', djangoPasswordEyeClickHandler);
     }
   });
-});
+}

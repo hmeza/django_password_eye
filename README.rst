@@ -1,8 +1,18 @@
-# Django Password Eye
+===================
+Django Password Eye
+===================
+
+.. image:: https://img.shields.io/pypi/v/django_password_eye.svg
+   :target: https://pypi.org/project/django_password_eye
+
+Django Password Eye
+===================
 
 A Django field and widget to show the 'eye' icon that shows and hides password.
 
-## Install
+Install
+-------
+
 `
 pip install django-password-eye
 `
@@ -26,8 +36,10 @@ set this in your settings file:
 ```
 DJANGO_PASSWORD_EYE_INCLUDE_FONT_AWESOME = False
 ```
-``
-## Requires
+
+
+Requires
+--------
 
 Font Awesome. It is included in the widget by default.``
 
@@ -37,7 +49,7 @@ Font Awesome. It is included in the widget by default.``
 Import PasswordEye and use it instead of the traditional Password field.
 
 from django_password_eye.fields import PasswordEye
- 
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=150,
                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Login')}),
@@ -45,12 +57,14 @@ class LoginForm(forms.Form):
     password = PasswordEye(label='')
 ```
 
-## CSS classes
+CSS classes
+-----------
 
 Check template input.html.
 I suggest to modify `link` class to add cursor: hand/pointer, but it is up to you.
 
-## Source code
+Source code
+-----------
 
 The code was taken from this link
 

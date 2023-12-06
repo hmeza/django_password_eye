@@ -7,14 +7,16 @@
 {% if include_font_awesome_library %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css" rel="stylesheet">
 {% endif %}
-<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/django_password_eye.css' %}" />
-<script src="{% static 'django_password_eye/js/django_password_eye.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/django_password_eye.css' %}?v=dpe.1.0.4" />
+<script src="{% static 'django_password_eye/js/django_password_eye.js' %}?v=dpe.1.0.4"></script>
 {% endblock %}
 
-<div class="input-group" id="show_hide_password">
-    <input type="password" name="password" id="password" maxlength=50 class="form-control"
-           placeholder="{% trans 'Password' %}" data-toggle="password" style="position: relative">
+<div class="input-group django_password_eye" id="show_hide_password">
+    <input type="password" name="{{ widget.name }}" maxlength=50 class="form-control"
+           placeholder="{% trans 'Password' %}" data-toggle="password" style="position: relative"
+           {% include "django/forms/widgets/attrs.html" %}
+    >
     <div class="input-group-addon form-control link">
-        <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+        <span><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
     </div>
 </div>
