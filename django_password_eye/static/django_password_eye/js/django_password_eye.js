@@ -3,6 +3,7 @@ if(typeof djangoPasswordEyeElements === "undefined") {
 
   function djangoPasswordEyeClickHandler(event) {
     event.preventDefault();
+    djangoPasswordEyeElements = document.getElementsByClassName('django_password_eye');
     for (let i = 0; i < djangoPasswordEyeElements.length; i++) {
       const iElement = djangoPasswordEyeElements[i].querySelector('i');
       const input = djangoPasswordEyeElements[i].querySelector('input');
