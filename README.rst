@@ -60,7 +60,9 @@ class LoginForm(forms.Form):
 CSS classes
 -----------
 
+By using the css class `django_password_eye` as selector, you can customize the entire widget.
 Check template input.html.
+
 I suggest to modify `link` class to add cursor: hand/pointer, but it is up to you.
 
 Source code
