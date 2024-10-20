@@ -7,17 +7,27 @@
 {% if include_font_awesome_library %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" type="text/css" rel="stylesheet">
 {% endif %}
-<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/django_password_eye.css' %}?v=dpe.1.0.7" />
-<script src="{% static 'django_password_eye/js/django_password_eye.js' %}?v=dpe.1.0.7"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'django_password_eye/css/django_password_eye.css' %}?v=dpe.1.1.0" />
+<script src="{% static 'django_password_eye/js/django_password_eye.js' %}?v=dpe.1.1.0"></script>
 {% endblock %}
 
-<div class="input-group django_password_eye" id="show_hide_password">
-    <input type="password" name="{{ widget.name }}" maxlength=50 class="form-control"
-           placeholder="{% trans 'Password' %}" data-toggle="password" style="position: relative"
+<div class="input-group django_password_eye"
+     id="show_hide_password"
+     data-independent="{% if widget.independent %}1{% else %}0{% endif %}"
+>
+    <input type="password"
+           name="{{ widget.name }}"
+           maxlength=50
+           class="form-control"
+           placeholder="{% trans 'Password' %}"
+           data-toggle="password"
+           style="position: relative"
            {% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}
            {% include "django/forms/widgets/attrs.html" %}
     >
     <div class="input-group-addon form-control link">
-        <a><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+        <a>
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+        </a>
     </div>
 </div>
