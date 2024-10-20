@@ -4,7 +4,7 @@ from django.forms.widgets import PasswordInput
 class PasswordEyeWidget(PasswordInput):
     template_name = 'django_password_eye/input.html'
 
-    def __init__(self, independent, *args, **kwargs):
+    def __init__(self, independent=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.independent = independent
 

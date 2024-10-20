@@ -48,20 +48,27 @@ Import PasswordEye and use it instead of the traditional Password field.
 
 from django_password_eye.fields import PasswordEye
 
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=150,
+.. code-block:: python
+
+    class LoginForm(forms.Form):
+        username = forms.CharField(max_length=150,
                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Login')}),
                                label='')
-
-    password = PasswordEye(label='')
-
+        password = PasswordEye(label='')
 
 Independent behavior for inputs
 -------------------------------
 
-In case you need to trigger the show/hide password for any PasswordEye field, just create it as follows:
+In case you need to trigger the show/hide password for any PasswordEye field, specify the PasswordEyeWidget
+for the PasswordEye and add the parameter independent=True, which defaults to false:
 
-input = PasswordEye(independent=True)
+.. code-block:: python
+
+   from django_password_eye.fields import PasswordEye
+   from django_password_eye.widgets import PasswordEyeWidget
+
+   input = PasswordEye(widget=PasswordEyeWidget(independent=True))
+   code
 
 CSS classes
 -----------
