@@ -6,6 +6,7 @@ Django Password Eye
    :target: https://pypi.org/project/django_password_eye
 
 |
+
 A Django field and widget to show the 'eye' icon that shows and hides password.
 
 .. image:: misc/readme-image.png
@@ -50,9 +51,10 @@ from django_password_eye.fields import PasswordEye
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=150,
                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Login')}),
-               ``                label='')
+                               label='')
+
     password = PasswordEye(label='')
-```
+
 
 Independent behavior for inputs
 -------------------------------

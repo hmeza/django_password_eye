@@ -6,7 +6,6 @@ class PasswordEyeWidget(PasswordInput):
 
     def __init__(self, independent, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        print(f"Setting independent as {independent}")
         self.independent = independent
 
     def get_context(self, name, value, attrs):
