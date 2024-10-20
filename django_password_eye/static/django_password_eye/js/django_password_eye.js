@@ -33,7 +33,10 @@ if(typeof djangoPasswordEyeElements === 'undefined') {
 
   function djangoPasswordEyeClickUniqueHandler(event) {
     event.preventDefault();
-    const iElement = event.target;
+    let iElement = event.target;
+    if (iElement.tagName === 'DIV') {
+      iElement = iElement.querySelector('i');
+    }
     const input = event.target.closest('.input-group').querySelector('input');
     togglePasswordEyeInput(input, iElement);
   }
