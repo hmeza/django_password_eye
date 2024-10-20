@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-password-eye"
-version = "1.1.0"
+version = "1.1.2"
 description = "Password field for Django with the eye icon to show/hide password text"
 readme = "README.rst"
 authors = [{ name = "Hugo Meza", email = "hugo.meza.macias@gmail.com" }]
@@ -23,4 +23,10 @@ dependencies = []
 Homepage = "https://github.com/hmeza/django_password_eye"
 
 [tool.setuptools]
-packages = ["django_password_eye"]
+packages = [
+    "django_password_eye",
+    "django_password_eye.static.django_password_eye.css",
+    "django_password_eye.static.django_password_eye.js",
+    "django_password_eye.templates.django_password_eye",
+    "django_password_eye.templatetags"
+]

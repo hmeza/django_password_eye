@@ -9,7 +9,7 @@ Django Password Eye
 
 A Django field and widget to show the 'eye' icon that shows and hides password.
 
-.. image:: misc/readme-image.png
+.. image:: https://raw.githubusercontent.com/hmeza/django_password_eye/master/misc/readme-image.png
 
 Requirements
 ============
