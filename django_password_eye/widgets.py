@@ -4,6 +4,16 @@ from django.forms.widgets import PasswordInput
 class PasswordEyeWidget(PasswordInput):
     template_name = 'django_password_eye/input.html'
 
+    def __init__(self, independent, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        print(f"Setting independent as {independent}")
+        self.independent = independent
+
+    def get_context(self, name, value, attrs):
+        context = super().get_context(name, value, attrs)
+        context['widget']['independent'] = self.independent
+        return context
+
     class Media:
         css = {
             "all": ("django_password_eye/css/django_password_eye.css",)

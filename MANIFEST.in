@@ -3,3 +3,4 @@ include README
 include django_password_eye/static/django_password_eye/css/django_password_eye.css
 include django_password_eye/static/django_password_eye/js/django_password_eye.js
 include django_password_eye/templates/django_password_eye/input.html
+exclude tests
