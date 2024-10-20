@@ -5,13 +5,18 @@ Django Password Eye
 .. image:: https://img.shields.io/pypi/v/django_password_eye.svg
    :target: https://pypi.org/project/django_password_eye
 
-Django Password Eye
-===================
-
+|
 A Django field and widget to show the 'eye' icon that shows and hides password.
 
+.. image:: misc/readme-image.png
+
+Requirements
+============
+
+Font Awesome. It is included in the widget by default.
+
 Install
--------
+=======
 
 `
 pip install django-password-eye
@@ -19,14 +24,12 @@ pip install django-password-eye
 
 In settings, add `django_password_eye` to INSTALLED_APPS:
 
-```
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    ...
-    'django_password_eye',
-]
-```
+| INSTALLED_APPS = [
+|     'django.contrib.admin',
+|     'django.contrib.auth',
+|     ...
+|     'django_password_eye',
+| ]
 
 By default, it includes the Font Awesome css library
 
@@ -37,15 +40,9 @@ set this in your settings file:
 DJANGO_PASSWORD_EYE_INCLUDE_FONT_AWESOME = False
 ```
 
+Usage
+=====
 
-Requires
---------
-
-Font Awesome. It is included in the widget by default.``
-
-## Usage
-
-```
 Import PasswordEye and use it instead of the traditional Password field.
 
 from django_password_eye.fields import PasswordEye
@@ -56,6 +53,13 @@ class LoginForm(forms.Form):
                ``                label='')
     password = PasswordEye(label='')
 ```
+
+Independent behavior for inputs
+-------------------------------
+
+In case you need to trigger the show/hide password for any PasswordEye field, just create it as follows:
+
+input = PasswordEye(independent=True)
 
 CSS classes
 -----------
